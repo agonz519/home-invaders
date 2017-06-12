@@ -1,0 +1,5 @@
+﻿                ╔══════════════F I G H T - C O M M A N D S══════════════╗
+                ║   (A) Attack : Delivers an attack that does 1 DMG     ║
+                ║   (B) Block  : Raise your shield to negate any DMG    ║
+                ║   (R) Rest   : Take a rest that adds 1 HP             ║
+                ╠═══════════════════════════════════════════════════════╝

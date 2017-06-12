@@ -1,0 +1,39 @@
+﻿
+                                        OBJECTIVE:
+A band of goblins has invaded the home of a commoner. As the hero, you are tasked with clearing
+out the home. You must defeat all the goblins in glorious combat in order to reveal the Goblin
+King, the ring leader of the band. Once the Goblin King is revealed, you must defeat him to
+complete your quest. 
+
+                                        NAVIGATION:
+                           Use ↑ ↓ ← → to navigate through the house.
+
+                                          COMBAT:
+            A   »  »  »   Attack   »  »  »   Deliver a 1 damage attack but use 1 stamina
+
+            B   »  »  »   Block    »  »  »   Raise your shield to negate any damage
+
+            R   »  »  »   Rest     »  »  »   Take a rest that adds 1 to both health and stamina 
+
+                                       COMBAT TIPS:
+ -If you and the enemy both attack each other at the same time, both combatants will take damage. 
+										
+ -If an attack is made while the other combatant is resting, a critical hit will take place which
+  causes double damage. Choose your Rests carefully.
+
+ -Keep an eye on your stamina. Every time you attack you will use stamina and if you run out you
+  will be unable to attack until you have rested.
+  
+                                        CHARACTERS:
+                                           _T_
+                            o   »  »  »   [:|:]   »  »  »   Hero
+                                           "'"
+                                          _   _
+                                           \_/
+                            x   »  »  »   (õ|õ)   »  »  »   Goblin
+                                           v-v
+
+                                          ║ ║ ║
+                            K   »  »  »   ╠╬╬╬╣   »  »  »   Goblin King 
+                                          {¤|¤}
+
