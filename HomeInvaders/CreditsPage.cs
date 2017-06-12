@@ -10,7 +10,7 @@ namespace HomeInvaders
 	{
 		public static void ShowCredits()
 		{
-			Console.ForegroundColor = ConsoleColor.Cyan; 
+			Console.ForegroundColor = ConsoleColor.Blue; 
 
 			FileReader.ReadFile("Images\\Credits.txt");
 
