@@ -6,6 +6,6 @@ You are a hero who has been tasked with clearing out a house full of unruly gobl
 
 See the Help page (on the main menu) to learn how to play. 
 
-This is my C# project ever so I'd love to hear your feedback and where I have room to improve. 
+This is my first C# project ever (first using any language period) so I'd love to hear your feedback and where I have room to improve. 
 
 Thanks for checking out Home Invaders!
