@@ -11,6 +11,9 @@ namespace HomeInvaders
 	{
 		public static void DisplayStudios()
 		{
+			// Changes the color of "Buckley Studios" every fourth of a second.
+			// Console is cleared inbetween to give the illusion its changing colors.
+
 			Console.ForegroundColor = ConsoleColor.Cyan;
 			FileReader.ReadFile("Images\\BuckleyStudios.txt");
 			Thread.Sleep(250);
@@ -75,6 +78,9 @@ namespace HomeInvaders
 			FileReader.ReadFile("Images\\BuckleyStudios.txt");
 			Thread.Sleep(250);
 			Console.Clear();
+
+			// Displays "Gonzo Gaming" with some added animations again using
+			// console clear
 			
 			Console.ForegroundColor = ConsoleColor.Red;
 			FileReader.ReadFile("Images\\GGstudios1.txt");
@@ -93,7 +99,7 @@ namespace HomeInvaders
 			Thread.Sleep(5000);
 			Console.Clear();
 
-			MainMenu.Title();
+			MainMenu.Title(); // Time to start playing!
 
 		}
 	}

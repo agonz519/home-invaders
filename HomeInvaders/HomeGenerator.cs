@@ -12,7 +12,7 @@ namespace HomeInvaders
 		public static Location[] startingGoblinLocations;
 
         public static void Initialize()
-        {
+        { // Initializes the grid location coordinates, goblin coordinates, location associations
 			homeStateGrid = new Location[5][];
 			for (int i = 0; i < 5; i++ )
 			{
@@ -71,17 +71,17 @@ namespace HomeInvaders
 				}
 			}
 
-			// Link "D3 pos 3, 2" and "Start pos 4, 2"
+			// Link position (3, 2)(space above start space) and start position (4, 2)
 			homeStateGrid[3][2].Down = homeStateGrid[4][2];
 			homeStateGrid[4][2].Up = homeStateGrid[3][2];
 			homeStateGrid[4][2].Left = Location.Wall;
 			homeStateGrid[4][2].Right = Location.Wall;
 			homeStateGrid[4][2].Down = Location.Wall;
 
-			homeStateGrid[4][2].HasHero = true;
+			homeStateGrid[4][2].HasHero = true; // Start position (4, 2) contains Hero
 
 			Random r = new Random();
-			startingGoblinLocations = new Location[4];
+			startingGoblinLocations = new Location[4]; // Random locations for goblins
 
 			Location g1 = homeStateGrid[r.Next(0, 3)][r.Next(0, 4)];
 			Location g2 = homeStateGrid[r.Next(0, 3)][r.Next(0, 4)];
@@ -105,6 +105,7 @@ namespace HomeInvaders
 				g4 = homeStateGrid[r.Next(0, 3)][r.Next(0, 4)];
 			}
 
+			// Random locations contain the goblins
 			g1.HasG1 = true;
 			g2.HasG2 = true;
 			g3.HasG3 = true;
@@ -116,7 +117,7 @@ namespace HomeInvaders
 		}
 		
 		public static void RevealKing() 
-		{
+		{ // Displays the Goblin King if all goblins have been wiped off the grid
 			if (startingGoblinLocations[0].HasG1 == false && startingGoblinLocations[1].HasG2 == false && startingGoblinLocations[2].HasG3 == false)
 			{
 				startingGoblinLocations[3].HasGKing = true;
@@ -124,7 +125,7 @@ namespace HomeInvaders
 		}
 
 		public static void DrawGrid()
-        {
+        { // Draws the house grid
 			Console.ForegroundColor = ConsoleColor.Cyan;
 			
 			for (int i = 0; i < 4; i++)
@@ -160,7 +161,7 @@ namespace HomeInvaders
 		}
 		
 		public static void Stats(int health)
-		{
+		{ // displays the health of the hero in the house grid view
 			int hp;
 			string displayHP = "";
 			for (hp = health; hp > 0; hp--)

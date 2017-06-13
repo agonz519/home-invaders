@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HomeInvaders
 {
 	class HelpPage
-	{
+	{ // Displays the Help page which teaches the user how to play. Uses HelpMenu.txt
 		public static void Help()
 		{
 			Console.ForegroundColor = ConsoleColor.Black;

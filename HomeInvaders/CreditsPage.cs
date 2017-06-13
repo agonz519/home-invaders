@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HomeInvaders
 {
 	class CreditsPage
-	{
+	{ // Displays the names of everyone that contributed to making this happen. Much love. 
 		public static void ShowCredits()
 		{
 			Console.ForegroundColor = ConsoleColor.Cyan; 

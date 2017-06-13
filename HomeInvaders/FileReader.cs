@@ -9,6 +9,9 @@ namespace HomeInvaders
 {
 	class FileReader
 	{
+		// FileReader was created to have a simple way to pull files from 
+		// resources folder throughout all classes.
+
 		public static void ReadFile(string filename)
 		{
 			int counter = 0;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HomeInvaders
 {
 	class Movement
-	{
+	{ // This class handles everything that happens when a hero runs into a goblin
 		public static void Consequences()
 		{
 			Console.Beep();
