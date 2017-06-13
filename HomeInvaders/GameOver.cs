@@ -9,7 +9,7 @@ using System.Media;
 namespace HomeInvaders
 {
 	class GameOver
-	{
+	{ // This class handles what happens you die. RIP. 
 		public static void YouLost()
 		{
 			Shell.sndPlayer.SoundLocation = Directory.GetCurrentDirectory() + "\\Music\\Game_Over.wav";

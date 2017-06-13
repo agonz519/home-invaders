@@ -12,6 +12,7 @@ namespace HomeInvaders
 	{
 		public static void Title()
 		{
+			// Play the main menu music
 			SoundPlayer sndPlayer = new SoundPlayer();
 			sndPlayer.SoundLocation = Directory.GetCurrentDirectory() + "\\Music\\bensound_instinct.wav";
 			sndPlayer.PlayLooping();
@@ -30,30 +31,30 @@ namespace HomeInvaders
 
 				switch (response)
 				{
-					case "1":
+					case "1": // Starts the game
 						sndPlayer.Stop();
 						Console.Clear();
 						Shell.Welcome();
 						Shell.StartGame();
 						break;
 
-					case "2":
+					case "2": // Displays instructions on how to play
 						Console.Clear();
 						HelpPage.Help();
 						break;
 
-					case "3":
+					case "3": // Displays the credits for the game
 						Console.Clear();
 						CreditsPage.ShowCredits();
 						break;
 
-					case "Q":
+					case "Q": // Exits the application
 						Console.WriteLine("\n\nNow exiting...\n");
 						System.Threading.Thread.Sleep(500);
 						Environment.Exit(0);
 						break;
 
-					default:
+					default: // Shows an error and resets the main menu
 						Console.WriteLine("Please choose 1, 2, or Q.\n");
 						System.Threading.Thread.Sleep(2000);
 						Console.Clear();
@@ -63,6 +64,7 @@ namespace HomeInvaders
 			}
 		}
 
+		// Used to reset all the stats of both the hero and goblins for a new game
 		public static void Reset()
 		{
 			Console.Clear();

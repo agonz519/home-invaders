@@ -9,7 +9,7 @@ using System.Media;
 namespace HomeInvaders
 {
 	class Victory
-	{
+	{ // This class handles what happens when you defeat a goblin or the goblin king
 		public static void YouWon()
 		{
 			if (Shell.isKing == false)

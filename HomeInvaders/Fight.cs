@@ -11,9 +11,15 @@ using System.Threading;
 namespace HomeInvaders
 {
 	class Fight
-	{
+	{ 
+		/* Play sound effects and music using MediaPlayer class.
+		   Had to use MediaPlayer class instead of SoundPlayer class because SoundPlayer
+		   cannot play two sounds at once. */
+		
 		public static MediaPlayer sndEffect1 = new MediaPlayer();
 		public static MediaPlayer sndEffect2 = new MediaPlayer();
+
+		// MediaPlayer class was a royal pain to figure out looping so decided to move on
 		public static MediaPlayer musicPlayer = new MediaPlayer();
 		
 		
@@ -23,21 +29,21 @@ namespace HomeInvaders
 		public static void PlaySound1(string audioPath)
 		{
 			sndEffect1.Open(new System.Uri(audioPath));
-			sndEffect1.Volume = 1;
+			sndEffect1.Volume = 1; // 1 is max volume for MediaPlayer. Wanted sound to be louder than music.
 			sndEffect1.Play();
 		}
 
 		public static void PlaySound2(string audioPath)
 		{
 			sndEffect2.Open(new System.Uri(audioPath));
-			sndEffect2.Volume = 1;
+			sndEffect2.Volume = 1; // 1 is max volume for MediaPlayer. Wanted sound to be louder than music.
 			sndEffect2.Play();
 		}
 
 		public static void PlayMusic(string audioPath)
 		{
 			musicPlayer.Open(new System.Uri(audioPath));
-			musicPlayer.Volume = .3;
+			musicPlayer.Volume = .3; // Music much lower than sound effects
 			musicPlayer.Play();
 		}
 
@@ -47,7 +53,7 @@ namespace HomeInvaders
 		}
 
 		public static void FightUI(int HeroHp, int GoblinHp, int HeroStamina, bool kingFightUI)
-		{
+		{ // This method creates the display above the hero and goblin
 						
 			string titles;
 			
@@ -65,6 +71,8 @@ namespace HomeInvaders
 			string displayHeroHP = "         HEALTH ";
 			string displayGoblinHP = "";
 			string displayHeroStamina = "        STAMINA ";
+
+			// Create the health block displays for Hero and Goblin
 			for (hHp = HeroHp; hHp > 0; hHp--)
 			{
 				displayHeroHP = displayHeroHP + "██ ";
@@ -83,6 +91,8 @@ namespace HomeInvaders
 			Console.WriteLine(displayHeroStamina);
 		}
 
+		/* As health goes up and down, need to keep the titles above each health bar
+		   in the correct location */
 		public static string SpaceManager(int HeroHp)
 		{
 			if (HeroHp <= 0)
@@ -140,17 +150,15 @@ namespace HomeInvaders
 				FileReader.ReadFile("Images\\CharacterDisplay.txt");
 			
 			Console.WriteLine(Environment.NewLine + Environment.NewLine + Environment.NewLine);
+			
+			// Decides what the goblins attacks with
 			Random guess = new Random();
-
 			int min = 1;
 			int max = 3;
 
 			while (x > 0 && o > 0)
 			{
 				int GobAttack = guess.Next(min, max + 1);
-
-				//if (x > 3)
-				//	GobAttack = 1; //Goblin will always attack if his health is greater than 3
 
 				FileReader.ReadFile("Images\\FightCommands.txt");
 				Console.Write("                ║   Enter your move [A][B][R]: ");
@@ -501,8 +509,9 @@ namespace HomeInvaders
 					//	Console.WriteLine();
 					//	Environment.Exit(0);
 					//	break;
+					//	//Took this out as you can accidently press Q when trying to press A for attack. Someone thought I was rage-quitting. 
 
-					default:
+					default: // If you fail to follow instructions...
 						Console.Clear();
 						FightUI(o, x, s, kingFight);
 						Console.WriteLine();
@@ -528,7 +537,7 @@ namespace HomeInvaders
 
 
 		public static void Attack(int heroHealthIn, int heroStaminaIn, out int heroHealthOut, out int heroStaminaOut)
-		{
+		{ // handles what happens on an attack
 			int health = heroHealthIn;
 			int stamina = heroStaminaIn;
 			health -= 1;
@@ -540,7 +549,7 @@ namespace HomeInvaders
 		}
 
 		static void Rest(int h, int hmax, int s, int smax, out int outh, out int outs)
-		{
+		{ // handles what happens on a rest
 			int health = h;
 			int stamina = s;
 			if (health < hmax)

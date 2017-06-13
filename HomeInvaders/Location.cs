@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HomeInvaders
 {
     public class Location
-    {
+    { // Location object for positions of Hero & Goblins
         public string Id { get; set; }
 
         public Location(string id, int x, int y):
@@ -35,23 +35,9 @@ namespace HomeInvaders
 		public bool HasG2 { get; set; }
 		public bool HasG3 { get; set; }
 		public bool HasGKing { get; set; }
-
-		public int CurrentGoblinCount()
-		{
-			int returnVal = 0;
-
-			if (HasG1)
-				returnVal++;
-			if (HasG2)
-				returnVal++;
-			if (HasG3)
-				returnVal++;
-
-			return returnVal;
-		} 
 		
         public string Display()
-        {
+        { // Decides how the house grid should look given certain circumstances
             string display = "";
             
 			if (Id == "S")
@@ -113,7 +99,7 @@ namespace HomeInvaders
         }
 
         public string DisplayHorizontalWall()
-        {
+        { // horizontal walls for the house
             string display = "";
 
             if (Id == "S")
